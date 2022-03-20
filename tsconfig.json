@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "module": "commonjs",
+    "outDir": "js",
+    "target": "es5",
+    "sourceMap": true,
+    "removeComments": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

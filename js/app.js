@@ -5,9 +5,17 @@ var User = (function () {
     return User;
 }());
 function add(a, b) {
-    var result = a + b;
-    console.log(result);
+    return a + b;
 }
-add(25, 10);
-add(25, 15);
+var a1 = add(25, 10);
+var a2 = add(25, 15);
+function defaultLastName() {
+    return "Иванов";
+}
+function getName(fistName, lastName) {
+    if (lastName === void 0) { lastName = defaultLastName(); }
+    return fistName + " " + lastName;
+}
+console.log(getName("Иван", "Игоревич"));
+console.log(getName("Иван"));
 //# sourceMappingURL=app.js.map

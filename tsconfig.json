@@ -1,5 +1,5 @@
 {
-  "compileOnSave": true,
+//  "compileOnSave": true,
   "compilerOptions": {
     "noEmitOnError": true,
     "module": "commonjs",

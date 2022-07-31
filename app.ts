@@ -104,4 +104,72 @@ function printPerson(user: Person) {
 printPerson(tom);
 printPerson(bob);
 
+/** Type assertion. Преобразование к типу */
 
+// Компилятор должен выдасть ошибку, т.к. header представляет собой тип HTMLElement|null
+const header1 = document.getElementById('header');
+header1.innerText = 'Привет мир';
+// debugger;
+/** Приведение к типу при помощи <> */
+
+const header2 = <HTMLElement>document.getElementById('header');
+header2.innerText = 'Hello word';
+// debugger;
+
+/** Приведение типов при помощи as */
+
+const header3 = document.getElementById('header') as HTMLElement;
+header3.innerText = 'Коничива';
+
+/** Массивы */
+
+let list: number[] = [10, 12, 23];
+let colors: string[] = ['green', 'blue', 'white'];
+console.log(list[0]);
+console.log(colors[1]);
+
+let names: Array<string> = ['Tom', 'ezi', 'Bob'];
+console.log(names);
+
+/** ReadonlyArray */
+const people: ReadonlyArray<string> = ['Спанчь боб', "Патрик", "Сквидвард (кальмар тип)"];
+// Альтернативная запись
+const people2: readonly string[] = ['Красти краб', 'Мистер крабс', 'Планктон'];
+// people[1] = 'Не патрик'; Ошибка: нельзя изменять значение
+// people.push('Патрик 2'); Ошибка: нет такого метода
+// people.pop(); Ошибка: нет такоего метода
+
+// Операции чтения разрешенны
+function printUsers(users: readonly string[]) {
+    for(const user in users) {
+        console.log(user);
+    }
+}
+
+function usersToString(users: ReadonlyArray<string>) {
+    return users.join(', ');
+}
+
+printUsers(people2);
+console.log(usersToString(people2));
+
+// Декомпозиция массива
+const [first, second, third, forth] = people2;
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(forth);
+
+// После ...остаток будет разлоен в массив
+const [one, ...others] = people;
+console.log(one);
+console.log(others);
+
+// Можно проскипать элемент при декомпозици при помощи ,
+const people3: string[]= ["Tom", "Bob", "Sam", "Kate"];
+const [, , third2, forth2] = people3;
+console.log(third2);
+console.log(forth2);
+
+/** Кортежи */
+let ander;

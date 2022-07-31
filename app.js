@@ -75,3 +75,57 @@ function printPerson(user) {
 }
 printPerson(tom);
 printPerson(bob);
+/** Type assertion. Преобразование к типу */
+// Компилятор должен выдасть ошибку, т.к. header представляет собой тип HTMLElement|null
+var header1 = document.getElementById('header');
+header1.innerText = 'Привет мир';
+// debugger;
+/** Приведение к типу при помощи <> */
+var header2 = document.getElementById('header');
+header2.innerText = 'Hello word';
+// debugger;
+/** Приведение типов при помощи as */
+var header3 = document.getElementById('header');
+header3.innerText = 'Коничива';
+/** Массивы */
+var list = [10, 12, 23];
+var colors = ['green', 'blue', 'white'];
+console.log(list[0]);
+console.log(colors[1]);
+var names = ['Tom', 'ezi', 'Bob'];
+console.log(names);
+/** ReadonlyArray */
+var people = ['Спанчь боб', "Патрик", "Сквидвард (кальмар тип)"];
+// Альтернативная запись
+var people2 = ['Красти краб', 'Мистер крабс', 'Планктон'];
+// people[1] = 'Не патрик'; Ошибка: нельзя изменять значение
+// people.push('Патрик 2'); Ошибка: нет такого метода
+// people.pop(); Ошибка: нет такоего метода
+// Операции чтения разрешенны
+function printUsers(users) {
+    for (var user in users) {
+        console.log(user);
+    }
+}
+function usersToString(users) {
+    return users.join(', ');
+}
+printUsers(people2);
+console.log(usersToString(people2));
+// Декомпозиция массива
+var first = people2[0], second = people2[1], third = people2[2], forth = people2[3];
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(forth);
+// После ...остаток будет разлоен в массив
+var one = people[0], others = people.slice(1);
+console.log(one);
+console.log(others);
+// Можно проскипать элемент при декомпозици при помощи ,
+var people3 = ["Tom", "Bob", "Sam", "Kate"];
+var third2 = people3[2], forth2 = people3[3];
+console.log(third2);
+console.log(forth2);
+/** Кортежи */
+var ander;

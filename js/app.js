@@ -68,4 +68,41 @@ function printPerson(user) {
 }
 printPerson(tom);
 printPerson(bob);
+var header1 = document.getElementById('header');
+header1.innerText = 'Привет мир';
+var header2 = document.getElementById('header');
+header2.innerText = 'Hello word';
+var header3 = document.getElementById('header');
+header3.innerText = 'Коничива';
+var list = [10, 12, 23];
+var colors = ['green', 'blue', 'white'];
+console.log(list[0]);
+console.log(colors[1]);
+var names = ['Tom', 'ezi', 'Bob'];
+console.log(names);
+var people = ['Спанчь боб', "Патрик", "Сквидвард (кальмар тип)"];
+var people2 = ['Красти краб', 'Мистер крабс', 'Планктон'];
+function printUsers(users) {
+    for (var user in users) {
+        console.log(user);
+    }
+}
+function usersToString(users) {
+    return users.join(', ');
+}
+printUsers(people2);
+console.log(usersToString(people2));
+var first = people2[0], second = people2[1], third = people2[2], forth = people2[3];
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(forth);
+var one = people[0], others = people.slice(1);
+console.log(one);
+console.log(others);
+var people3 = ["Tom", "Bob", "Sam", "Kate"];
+var third2 = people3[2], forth2 = people3[3];
+console.log(third2);
+console.log(forth2);
+var ander;
 //# sourceMappingURL=app.js.map
